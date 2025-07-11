@@ -1,0 +1,459 @@
+@font-face {
+    font-family: 'IranSans';
+    src: url('fonts/IRANSansXBlack.ttf') format('truetype'),
+         url('fonts/IRANSansXDemiBold.ttf') format('truetype'),
+         url('fonts/IRANSansXBold.ttf') format('truetype'),
+         url('fonts/IRANSansXExtraBold.ttf') format('truetype'),
+         url('fonts/IRANSansXLight.ttf') format('truetype'),
+         url('fonts/IRANSansXMedium.ttf') format('truetype'),
+         url('fonts/IRANSansXRegular.ttf') format('truetype'),
+         url('fonts/IRANSansXThin.ttf') format('truetype'),
+         url('fonts/IRANSansXUltraLight.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+body {
+    font-family: 'IranSans', sans-serif;
+    direction: rtl;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(img/background.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding-top: 70px;
+}
+
+.logo {
+  width: 220px;
+  height: 200px;
+  margin-left: 575px;
+  float: right;
+  margin-top: -50px;
+  margin-bottom: -100px;
+}
+
+.icon-container {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+  }
+  
+  .icon{
+    vertical-align: middle;
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+  }
+  
+  .top-icon {
+    vertical-align: middle;
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+
+.box {
+    width: 92%;
+    max-width: 710px;
+    padding: 20px;
+    background-color: #e7d3ad;
+    color: #333;
+    text-align: center;
+    margin: 20px;
+    transition: transform 0.3s ease;
+    border-radius: 80px;
+    margin-left: 600px;
+    margin-top: 150px;
+}
+
+.box:hover {
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+.box:not(:hover) {
+    opacity: 0.5;
+}
+
+.top {
+    width: 92%;
+    max-width: 710px;
+    padding: 20px;
+    background-color: #e7d3ad;
+    color: #333;
+    text-align: center;
+    margin: 20px;
+    transition: transform 0.3s ease;
+    border-radius: 80px;
+    margin-left: 600px;
+}
+
+.top:hover {
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+.top:not(:hover) {
+    opacity: 0.5;
+}
+
+.down {
+    width: 92%;
+    max-width: 710px;
+    padding: 20px;
+    background-color: #e7d3ad;
+    color: #333;
+    text-align: center;
+    margin: 20px;
+    transition: transform 0.3s ease;
+    border-radius: 80px;
+    margin-left: 600px;
+    font-size: medium;
+}
+
+.down:hover {
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+.down:not(:hover) {
+    opacity: 0.5;
+}
+
+.center {
+  width: 92%;
+  max-width: 710px;
+  padding: 20px;
+  background-color: #e7d3ad;
+  color: #333;
+  text-align: center;
+  margin: 20px;
+  transition: transform 0.3s ease;
+  border-radius: 80px;
+  margin-left: 600px;
+  font-size: medium;
+}
+
+.center:hover {
+  transform: scale(1.1);
+  z-index: 1;
+}
+
+.center:not(:hover) {
+  opacity: 0.5;
+}
+
+.center img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.wrapper {
+    position: relative;
+}
+  
+.hamburger {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    margin: 5px 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+  
+.menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: rgba(77, 75, 70, 0.5);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto;
+    z-index: 1000;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: -8px 0 32px rgba(0, 0, 0, 0.05);
+}
+  
+.menu.show {
+    transform: translateX(0);
+}
+  
+.menu a{
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    margin-top: 20px;
+    position: relative;
+    padding-right: 40px;
+    transition: all 0.3s ease;
+}
+
+  .menu a:hover {
+    margin-bottom: 1px;
+    filter: drop-shadow(2px 2px 2px mediumseagreen);
+    transform: translateX(-5px);
+    transition: transform 0.3s ease;
+}
+
+.menu a:active {
+    color:slateblue;
+}
+
+.menu a::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #e7d3ad;
+  transition: width 0.3s ease;
+}
+
+.menu a:hover::before {
+  width: 100%;
+}
+  
+.overlay {
+    position: fixed;
+    top: 0;
+    right: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    display: none;
+    z-index: 1000;
+}
+
+.faq-container {
+  max-width: 600px;
+  margin: auto;
+  background: #e7d3ad;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgb(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-left: 733px;
+  width: 92%;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+}
+
+.faq-question {
+  background-color: #c3b09a;
+  color: #4a3c2d;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+  background-color: #b29b7d;
+}
+
+.faq-answer {
+  background-color: #f6e8d5;
+  display: none;
+  padding: 10px;
+  border-left: 4px solid #b29b7d;
+  margin-top: 5px;
+}
+
+.arrow {
+  width: 20px;
+  height: 20px;
+  transition: transforn 0.5 ease;
+  margin-right: 20px;
+  vertical-align: middle;
+}
+
+.rotated {
+  transform: rotate(180deg);
+}
+.bottom {
+  text-align: center;
+  padding: 20px;
+  background-color: #f2f2f2;
+  margin-left: 587px;
+  margin-top: 20px;
+  width: 39.5%;
+  border-radius: 15px;
+}
+
+.bottom a {
+  margin: 5px;
+  text-decoration: none;
+  color: #333;
+}
+
+.corner-message {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  background-color: rgb(0, 0, 0, 0.7);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 16px;
+  display: none;
+  z-index: 9999;
+  transition: opacity 0.3s ease;
+}
+
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-bottom: -15px;
+}
+
+.us {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-bottom: -15px;
+}
+
+@media (max-width: 1200px) {
+    .box,
+    .top,
+    .down,
+    .center,
+    .faq-container,
+    .bottom {
+        width: 85%;
+        margin-right: 5%;
+        margin-left: auto;
+    }
+    
+    .logo {
+        margin-right: 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 50px;
+    }
+    
+    .logo {
+        width: 180px;
+        height: 164px;
+        margin: -30px 5% -80px auto;
+    }
+    
+    .box,
+    .top,
+    .down,
+    .center,
+    .faq-container,
+    .bottom {
+        border-radius: 40px;
+        padding: 15px;
+        margin-right: 5%;
+    }
+    
+    .hamburger {
+        top: 10px;
+        right: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        width: 150px;
+        height: 137px;
+        margin: -20px 3% -60px auto;
+    }
+    
+    .box,
+    .top,
+    .down,
+    .center,
+    .faq-container,
+    .bottom {
+        border-radius: 30px;
+        padding: 10px;
+        margin-right: 3%;
+    }
+    
+    .menu {
+        width: 85%;
+    }
+}
+
+@media (orientation: portrait) {
+    body {
+        background-position: center top;
+        background-attachment: scroll;
+    }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+    body {
+        background-position: 65% center;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        background-size: auto 100%;
+        background-position: 75% center;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo {
+        width: min(180px, 25vw);
+        right: min(8%, 50px);
+        margin: -30px 0 -80px;
+    }
+    
+    .faq-container {
+        width: 85%;
+        padding: 15px;
+    }
+}
+

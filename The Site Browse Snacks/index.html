@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>جستجوی میان وعده ها</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="hamburger" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+                 
+      <div id="myMenu" class="menu">
+        <a href="../The Site Main Page/index.html">خانه
+        <span class="icon-container"><img src="img/home.svg" alt="icon" class="top-icon"></span>
+        </a>
+        <a href="../The Site Diet/index.html">رژیم های غذایی
+        <span class="icon-container"><img src="img/diets.svg" alt="icon" class="top-icon"></span>
+        </a>
+        <a href="../The Site Meal History/index.html">تاریخچه برنامه غذایی
+        <span class="icon-container"><img src="img/plan-history.svg" alt="icon" class="top-icon"></span>
+        </a>
+        <a href="../The Site About Us/index.html">درباره ما
+        <span class="icon-container"><img src="img/about-us.svg" alt="icon" class="top-icon"></span>
+        </a>
+      </div>
+      </div>
+      <div class="overlay"></div>
+      </div>
+
+    <div class="main-content">
+        <div class="search-header">
+            <h1>
+                <i class="fas fa-utensils"></i>
+                جستجوی هوشمند میان وعده
+            </h1>
+            <p>با استفاده از سیستم پیشرفته ما، میان وعده مناسب رژیم غذایی خود را پیدا کنید</p>
+        </div>
+        <div class="search-container">
+            <select class="diet-select">
+                <option value="">نوع رژیم غذایی را انتخاب کنید</option>
+                <option value="diet-1">مدیترانه ای</option>
+                <option value="diet-2">گیاه خواری</option>
+                <option value="diet-3">روزه داری</option>
+                <option value="diet-4">پالئو</option>
+                <option value="diet-5">کاهش وزن</option>
+                <option value="diet-6">کتوژنیک</option>
+                <option value="diet-7">دیابت</option>
+                <option value="diet-8">قلب سالم</option>
+            </select>
+
+            <input type="number" class="calorie-input" placeholder="کالری مورد تظر خود را وارد کنید" min="5">
+
+            <button class="search-btn" onclick="showResults()">
+                <i class="fas fa-search"></i> جستجوی میان وعده
+            </button>
+            <div class="error-message" id="errorMessage"></div>
+        </div>        
+        </div>
+    </div>
+
+    <div class="result-container" id="resultBox">
+        <span class="close-btn" onclick="closeResults()">&times;</span>
+        <h2>پیشنهادهای مناسب</h2>
+        <div id="results">
+        </div>
+    </div>
+    <div class="search-footer">
+        <div class="diet-tips">
+            <i class="fas fa-lightbulb"></i>
+            نکته: میان وعده‌ها باید حداکثر ۲۰٪ از کالری روزانه شما را تشکیل دهند !
+        </div>
+    </div>
+</div>
+<footer class="bottom">
+    <a href="../The Site Nutrient Glossary/index.html" class="other" target="_blank">واژه نامه مواد مغذی
+    <span class="icon-container"><img src="img/nutrient-glossary.svg" alt="icon" class="icon"></span> 
+    </a>
+    <a href="../The Site Terms Of Service/index.html" class="other" target="_blank">شرایط خدمات
+    <span class="icon-container"><img src="img/terms-of-service.svg" alt="icon" class="icon"></span>
+    </a>
+    <br>
+    <a href="mailto:fitfoodcoah@gmail.com" class="other" target="_blank">آدرس الکترونیکی
+    <span class="icon-container"><img src="img/email.svg" alt="icon" class="icon"></span> 
+    </a>
+    <a href="https://www.instagram.com/fitfo_od2025?igsh=NzF2bG43YnQwYjBm&utm_source=qr" class="other" target="_blank">اینستاگرام
+    <span class="icon-container"><img src="img/instagram.svg" alt="icon" class="icon"></span>
+    </a>
+    <br>
+    <a href="../The Site Pirvacy Policy/index.html" class="other" target="_blank">حریم خصوصی
+    <span class="icon-container"><img src="img/privacy-policy.svg" alt="icon" class="icon"></span> 
+    </a>
+    <a href="../The Site DMCA/index.html" class="other" target="_blank">قانون حق چاپ هزاره دیجیتال
+    <span class="icon-container"><img src="img/copyright.svg" alt="icon" class="icon"></span> 
+    </a>
+    <p class="no-select">®فیت فود 2025©</p>
+  </footer>
+  
+    <script src="script.js"></script>
+</body>
+</html>
