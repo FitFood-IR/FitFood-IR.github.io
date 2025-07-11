@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="برنامه‌ریز تغذیه هوشمند - محاسبه کالری و پیشنهاد وعده‌های غذایی سالم">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css">
+  <title>Fit Food</title>
+</head>
+<body>
+    <div id="main">
+        <header>
+            <img class="logo" src="img/logo.png" alt="the site logo">
+        <div class="navbar">
+                <a href="./index.html" class="txt">خانه
+                <span class="icon-container"><img src="img/home.svg" alt="icon" class="top-icon"></span> 
+                </a>
+                <a href="../The Site Browse Snacks/index.html" class="txt">بررسی میان وعده ها
+                <span class="icon-container"><img src="img/browse-snacks.svg" alt="icon" class="top-icon"></span> 
+                </a>
+                <a href="../The Site Diet/index.html" class="txt">رژیم های غذایی
+                <span class="icon-container"><img src="img/diets.svg" alt="icon" class="top-icon"></span> 
+                </a>
+                  <a href="../The Site Meal History/index.html" class="txt">تاریخچه برنامه غذایی
+                <span class="icon-container"><img src="img/plan-history.svg" alt="icon" class="top-icon"></span>
+                </a>
+                <a href="../The Site About Us/index.html" class="txt">درباره ما
+                <span class="icon-container"><img src="img/about-us.svg" alt="icon" class="top-icon"></span>
+                </a>
+        </div>
+        </header>
+        <main>
+        <h1>سلام، به «فیت فود»، همراه شما در مسیر سلامتی، خوش آمدید!<br>
+        ما معتقدیم تغذیه صحیح کلید یک زندگی سالم و شاد است.</h1>
+        <p>«فیت فود» با رویکردی علمی و متخصصانه، برنامه های غذایی متناسب با سبک زندگی شما طراحی می کند.<br>
+    به ما بپیوندید و از مزایای یک رژیم غذایی سالم مانند افزایش انرژی، بهبود خواب و تقویت سیستم ایمنی بدن بهره مند شوید...</p>
+        <h3>محاسبه کالری و پیشنهاد غذا</h3>
+        <h4>بیایید بررسی کنیم که چقدر کالری باید مصرف کنید و غذای مناسب خود را بیابید :</h4>
+
+        <div class="calculator-container">
+        <div>
+        <label for="Gender">جنسیت</label> 
+        <br>
+        <span class="gender-input"><input type="radio" id="Male-option" name="option">مذکر
+        <input type="radio" id="Female-option" name="option">مؤنث
+        </span>
+        </div>
+        <span id="gender-error" class="gender-error-message">لطفاً جنسیت خود را انتخاب کنید</span>
+
+        <div class="diet-plan-section">
+        <label>انتخاب نوع رژیم</label>
+        <div class="diet-options">
+        <div class="diet-option">
+        <input type="radio" id="diet-1" name="diet" value="diet-1" hidden>
+        <label for="diet-1">
+        <img src="img/mediterranean.jpg" alt="رژیم مدیترانه ای">
+        <span>مدیترانه ای</span>
+        </label>
+        </div>
+        <div class="diet-option">
+            <input type="radio" id="diet-2" name="diet" value="diet-2" hidden>
+            <label for="diet-2">
+                <img src="img/vegetarianism.jpg" alt="گیاه خواری">
+                <span>گیاه خواری</span>
+            </label>
+        </div>
+        <div class="diet-option">
+            <input type="radio" id="diet-3" name="diet" value="diet-3" hidden>
+            <label for="diet-3">
+                <img src="img/fasting.png" alt="روزه داری">
+                <span>روزه داری</span>
+            </label>
+        </div>
+        <div class="diet-option">
+            <input type="radio" id="diet-4" name="diet" value="diet-4" hidden>
+            <label for="diet-4">
+                <img src="img/paleo.jpg" alt="پالئو">
+                <span>پالئو</span>
+            </label>
+        </div>
+        <div class="diet-option">
+            <input type="radio" id="diet-5" name="diet" value="diet-5" hidden>
+            <label for="diet-5">
+                <img src="img/lose-weight.jpg" alt="کاهش وزن">
+                <span>کاهش وزن</span>
+            </label>
+        </div>
+        <div class="diet-option">
+            <input type="radio" id="diet-6" name="diet" value="diet-6" hidden>
+            <label for="diet-6">
+                <img src="img/keto.png" alt="کتوژنیک">
+                <span>کتوژنیک</span>
+            </label>
+        </div>
+        <div class="diet-option">
+            <input type="radio" id="diet-7" name="diet" value="diet-7" hidden>
+            <label for="diet-7">
+                <img src="img/diabet.png" alt="دیابت">
+                <span>دیابت</span>
+            </label>
+        </div>
+        <div class="diet-option">
+            <input type="radio" id="diet-8" name="diet" value="diet-8" hidden>
+            <label for="diet-8">
+                <img src="img/healthy-heart.png" alt="قلب سالم">
+                <span>قلب سالم</span>
+            </label>
+        </div>
+        <span id="diet-error" class="diet-error-message">لطفاً یک رژیم غذایی انتخاب کنید</span>
+    </div>
+    </div>
+        <div class="input-group">
+            <label for="height-input">قد</label>
+            <input type="number" id="height-input" oninput="validateInput(this, 'height-error')" min="130" max="210"> سانتی متر
+            <span id="height-error" class="error-message">لطفاً قد را عددی بین ۱۳۰ تا ۲۱۰ وارد کنید.</span>
+        </div>
+    
+        <div class="input-group">
+            <label for="weight-input">وزن</label>
+            <input type="number" id="weight-input" oninput="validateInput(this, 'weight-error')" min="30" max="180"> کیلوگرم
+            <span id="weight-error" class="error-message">لطفاً وزن را عددی بین ۳۰ تا ۱۸۰ وارد کنید.</span>
+        </div>
+    
+        <div class="input-group">
+            <label for="age-input">سن</label>
+            <input type="number" id="age-input" oninput="validateInput(this, 'age-error')" min="12" max="120"> سال
+            <span id="age-error" class="error-message">لطفاً سن را عددی بین ۱۲ تا ۱۲۰ وارد کنید.</span>
+        </div>
+        
+        <div class="bodyfat-section">
+            <div class="bodyfat-header">
+                <label for="Bodyfat">چربی بدن</label>
+                <button class="help-trigger" onclick="toggleBodyfatHelp(event)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#007BFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 16V12" stroke="#007BFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 8H12.01" stroke="#007BFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <span id="bodyfat-error" class="bodyfat-error-message">لطفاً سطح چربی بدن را انتخاب کنید</span>
+            </div>
+            
+            
+            <div class="bodyfat-options">
+                <input type="radio" id="Low-option" name="options">کم
+                <input type="radio" id="Medium-option" name="options">متوسط
+                <input type="radio" id="High-option" name="options">زیاد
+            </div>
+            
+            <div class="bodyfat-tooltip" id="bodyfatTooltip">
+                <div class="tooltip-content">
+                    <h4>راهنمای تخمین چربی بدن</h4>
+                    <div class="gender-tabs">
+                        <button class="gender-tab active" data-gender="male">مردان</button>
+                        <button class="gender-tab" data-gender="female">زنان</button>
+                    </div>
+                    
+                    <div class="fat-levels">
+                        <div class="fat-level male active">
+                            <div class="level">
+                                <span class="label">کم:</span>
+                                <span class="value">زیر ۱۵%</span>
+                            </div>
+                            <div class="level">
+                                <span class="label">متوسط:</span>
+                                <span class="value">۲۵%-۱۵%</span>
+                            </div>
+                            <div class="level">
+                                <span class="label">زیاد:</span>
+                                <span class="value">بالای ۲۵%</span>
+                            </div>
+                            <div class="visual-guide">
+                                <div class="fat-visual male"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="fat-level female">
+                            <div class="level">
+                                <span class="label">کم:</span>
+                                <span class="value">زیر ۲۵%</span>
+                            </div>
+                            <div class="level">
+                                <span class="label">متوسط:</span>
+                                <span class="value">۳۵%-۲۵%</span>
+                            </div>
+                            <div class="level">
+                                <span class="label">زیاد:</span>
+                                <span class="value">بالای ۳۵%</span>
+                            </div>
+                            <div class="visual-guide">
+                                <div class="fat-visual female"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="measurement-methods">
+                        <h5>روش‌های اندازه‌گیری:</h5>
+                        <ul>
+                            <li>کالیپر چربی (دقیق‌ترین روش خانگی)</li>
+                            <li>ترازوهای هوشمند (دقت متوسط)</li>
+                            <li>محاسبه بر اساس دور کمر و قد</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    
+        <div class="input-group">
+            <label for="Activity-Level">سطح فعالیت</label>
+            <div class="activity-select-wrapper">
+                <div class="activity-select">
+                    <div class="select-header" onclick="toggleActivitySelect()">
+                        <span class="selected-value">لطفا انتخاب کنید</span>
+                        <svg class="chevron" viewBox="0 0 24 24">
+                            <path d="M7 10l5 5 5-5z"/>
+                        </svg>
+                    </div>
+                    <div class="select-options">
+                        <div class="option" data-value="option1">کم تحرک</div>
+                        <div class="option" data-value="option2">فعالیت سبک</div>
+                        <div class="option" data-value="option3">فعالیت متوسط</div>
+                        <div class="option" data-value="option4">فعالیت زیاد</div>
+                        <div class="option" data-value="option5">فعالیت بسیار زیاد</div>
+                    </div>
+                </div>
+                <select name="Activity-Level" id="activity" style="display: none;">
+                    <option value="option1">ورزش سبک</option>
+                    <option value="option2">کم تحرک، تمرین ۳-۴ بار در هفته</option>
+                    <option value="option3">ورزش مکرر</option>
+                    <option value="option4">بسیار ورزشکار</option>
+                    <option value="option5">فوق العاده ورزشکار</option>
+                </select>
+            </div>
+        <span id="activity-error" class="activity-error-message">لطفاً سطح فعالیت را انتخاب کنید</span>
+        </div>
+        <br>
+    
+        <div class="button-container">
+            <button type="submit" class="submit" id="submit" onclick="checkInputs()">دریافت پیشنهاد غذایی</button>
+        </div>
+    </div>
+    </main>
+
+        <footer class="bottom">
+        <a href="../The Site Nutrient Glossary/index.html" class="other">واژه نامه مواد مغذی
+            <span class="icon-container"><img src="img/nutrient-glossary.svg" alt="icon" class="icon"></span> 
+        </a>
+        <a href="../The Site Terms Of Service/index.html" class="other">شرایط خدمات
+            <span class="icon-container"><img src="img/terms-of-service.svg" alt="icon" class="icon"></span>
+        </a>
+        <br>
+        <a href="mailto:fitfoodcoah@gmail.com" class="other">آدرس الکترونیکی
+            <span class="icon-container"><img src="img/email.svg" alt="icon" class="icon"></span> 
+        </a>
+        <a href="https://www.instagram.com/fitfo_od2025?igsh=NzF2bG43YnQwYjBm&utm_source=qr" target="_blank" class="other">اینستاگرام
+            <span class="icon-container"><img src="img/instagram.svg" alt="icon" class="icon"></span>
+        </a>
+        <br>
+        <a href="../The Site Pirvacy Policy/index.html" class="other">حریم خصوصی
+            <span class="icon-container"><img src="img/privacy-policy.svg" alt="icon" class="icon"></span> 
+        </a>
+        <a href="../The Site DMCA/index.html" class="other">قانون حق چاپ هزاره دیجیتال
+            <span class="icon-container"><img src="img/copyright.svg" alt="icon" class="icon"></span> 
+        </a>
+        <p class="no-select">®فیت فود 2025©</p>
+    </footer>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    </body>
+    </html>
